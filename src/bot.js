@@ -117,4 +117,9 @@ http.createServer((req, res) => {
     res.end();
 }).listen(process.env.PORT || 3000);
 
+// --- KOMANDA KOJA ZAPRAVO PALI BOTA NA TELEGRAMU ---
+bot.launch().then(() => {
+    console.log('Telegraf bot uspešno pokrenut!');
+});
+
 module.exports = bot;
