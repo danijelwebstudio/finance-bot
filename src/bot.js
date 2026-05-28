@@ -110,4 +110,11 @@ bot.catch((err, ctx) => {
     console.error(`Greška kod ${ctx.updateType}:`, err);
 });
 
+// Lažni server koji drži bota budnim na Renderu
+const http = require('http');
+http.createServer((req, res) => {
+    res.write('Bot je online i radi!');
+    res.end();
+}).listen(process.env.PORT || 3000);
+
 module.exports = bot;
